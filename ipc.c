@@ -1,5 +1,9 @@
 // TODO: add the appropriate header files here
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 /**************************************************************
  *  ipc_create - creates a shared memory object called lab2 and
