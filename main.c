@@ -48,7 +48,7 @@ int main(int argc, char** argv)
     
     // TODO: call ipc_create to create shared memory region to which parent
     //       child have access.
-    ipc_ptr = ipc_create(64);
+    ipc_ptr = ipc_create(128);
     /* fork a child process */
     pid = fork();
 
@@ -70,6 +70,8 @@ int main(int argc, char** argv)
         
         command_args = get_arguments(argc,argv);
         execvp(command_args[0],command_args);
+        perror("execvp");
+        exit(1);
     }
     else { /* parent process */
         // TODO: have parent wait and get status of child.
